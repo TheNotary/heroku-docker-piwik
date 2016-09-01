@@ -4,7 +4,7 @@ RUN useradd -d /app -m app
 USER app
 
 ENV HOME /app
-ENV PORT 3000
+ENV PORT 8844
 ENV PATH /app/.heroku/php/bin:/app/.heroku/php/sbin:/tmp/php-pack/bin:$PATH
 ENV STACK cedar-14
 ENV DOCKER_BUILD 1
@@ -34,4 +34,4 @@ RUN cd vendor/piwik/piwik/misc \
 
 ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["/app/vendor/heroku/heroku-buildpack-php/bin/heroku-php-nginx -C nginx.conf -F fpm_custom.conf vendor/piwik/piwik/"]
-EXPOSE 3000
+EXPOSE 8844
